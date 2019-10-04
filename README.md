@@ -4,7 +4,7 @@
 * Converted to base64 like this and added to a JSON file like this ` {
 	"pdf_base_64" : "JVBERi0xLjMKJcfsj6IKMzAgMCBvYmoKPDwvTGVuZ3RoIDMxIDAgUii0NEiItazHpUHC..." }`
 * Throw Postman, with a POST query to a `https://localhost:8080/meet/tag_analyzer`
-* Results like this `{
+* Results like this ```json{
   "abbreviation_tags": [
     "CC",
     "CD",
@@ -119,4 +119,4 @@
     0,
     6
   ]
-}`
+}```
