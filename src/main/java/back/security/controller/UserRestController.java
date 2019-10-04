@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import back.project.project;
-import back.project.projectRepository;
 import back.security.JwtTokenUtil;
 import back.security.JwtUser;
 import back.security.model.User;
