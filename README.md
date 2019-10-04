@@ -1,5 +1,7 @@
 # stanford_tags_analyzer_spring
 
+#### To start it, install maven by `sudo apt-get install maven`, then install packages by `mvn install`, finally use `mvn spring-boot:run`, then you can try it following steps below:
+
 * For an PDF like this http://www.pdf995.com/samples/pdf.pdf
 * Converted to base64 like this and added to a JSON file like this ` {
 	"pdf_base_64" : "JVBERi0xLjMKJcfsj6IKMzAgMCBvYmoKPDwvTGVuZ3RoIDMxIDAgUii0NEiItazHpUHC..." }`
@@ -122,3 +124,6 @@
     ]
 }
 `
+*Finally you have the values of repeat at your PDF file
+
+
