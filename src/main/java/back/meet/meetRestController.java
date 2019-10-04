@@ -88,8 +88,13 @@ public class meetRestController<E> {
 	
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/tag_analyzer", produces = "application/json")
-    public int[] analyze(@RequestBody String json_string) throws ParseException, IOException {
+    public AnalizedPdfResponse analyze(@RequestBody String json_string) throws ParseException, IOException {
+		String[] tags = { "CC", "CD", "DT", "EX", "FW", "IN", "JJ", "JJR", "JJS", "LS", "MD", "NN", "NNS", "NNP", "NNPS", "PDT" , "POS", "PRP", "PRP$", "RB", "RBR", "RBS", "RP", "SYM", "TO", "UH", "VB", "VBD", "VBG", "VBN", "VBP", "VBZ", "WDT", "WP", "WP$", "WRB" };
+		String[] tags_description = { "Coordinating conjunction", "Cardinal number", "Determiner", "Existential there", "Foreign word", "Preposition or subordinating conjunction", "Adjective", "Adjective, comparative", "Adjective, superlative", "List item marker", "Modal", "Noun, singular or mass", "Noun, plural", "Proper noun, singular", "Proper noun, plural", "Predeterminer" , "Possessive ending", "Personal pronoun", "Possessive pronoun", "Adverb", "Adverb, comparative", "Adverb, superlative", "Particle", "Symbol", "to", "Interjection", "Verb, base form", "Verb, past tense", "Verb, gerund or present participle", "Verb, past participle", "Verb, non-3rd person singular present", "Verb, 3rd person singular present", "Wh-determiner", "Wh-pronoun", "Possessive wh-pronoun", "Wh-adverb" };
 		
+		AnalizedPdfResponse respuesta = new AnalizedPdfResponse();
+		respuesta.setAbbreviation_tags(tags);
+		respuesta.setDescription_tags(tags_description);
 		
 		//Conversion de JSON base64 -> PDF -> String Arraylist
 		/////////////////////////////////////		
@@ -116,9 +121,10 @@ public class meetRestController<E> {
 			}			
 				
 		}
+		respuesta.setValues_tags(tagVals);
 
 		
-		return tagVals;		
+		return respuesta;		
 		
     }
 	
